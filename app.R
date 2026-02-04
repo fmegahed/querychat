@@ -6,7 +6,7 @@ library(bslib)
 library(querychat)
 library(DT)
 library(dplyr)
-library(duckdb)
+library(RSQLite)
 
 # Load preprocessed data
 oews <- readRDS("data/oews.rds")
