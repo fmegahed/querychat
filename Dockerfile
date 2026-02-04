@@ -28,7 +28,6 @@ RUN R -e "remotes::install_version('querychat', version = '0.2.0', repos = c('ht
 # Copy application code
 COPY app.R app.R
 COPY data/ data/
-COPY www/ www/
 
 # Verify critical packages are available
 RUN R -e "stopifnot(requireNamespace('shiny', quietly = TRUE))" \
