@@ -18,6 +18,7 @@ RUN R -e "remotes::install_version('bslib', version = '0.10.0', repos = 'https:/
 RUN R -e "remotes::install_version('DT', version = '0.34.0', repos = 'https://cloud.r-project.org')"
 RUN R -e "remotes::install_version('dplyr', version = '1.2.0', repos = 'https://cloud.r-project.org')"
 RUN R -e "remotes::install_version('RSQLite', version = '2.4.5', repos = 'https://cloud.r-project.org')"
+RUN R -e "remotes::install_version('bsicons', version = '0.1.2', repos = 'https://cloud.r-project.org')"
 
 # Install r-universe packages with pinned versions (querychat and dependencies)
 RUN R -e "remotes::install_version('ellmer', version = '0.4.0', repos = c('https://posit-dev.r-universe.dev', 'https://cloud.r-project.org'))"
