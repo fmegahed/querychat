@@ -1,0 +1,35 @@
+name: Keep HF Space Alive
+
+on:
+  schedule:
+    - cron: "0 4 * * *"
+  workflow_dispatch:
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout HF Space
+        run: |
+          git clone https://fmegahed:${{ secrets.HF_TOKEN }}@huggingface.co/spaces/fmegahed/querychat_demo hf-space
+          cd hf-space
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Update keepalive CSV
+        run: |
+          cd hf-space
+          START_DATE="2026-02-11"
+          TODAY=$(date -u +"%Y-%m-%d")
+          DAYS=$(( ($(date -u -d "$TODAY" +%s) - $(date -u -d "$START_DATE" +%s)) / 86400 ))
+
+          echo "date,days_running" > keepalive.csv
+          echo "${TODAY},${DAYS}" >> keepalive.csv
+
+      - name: Push to Hugging Face
+        run: |
+          cd hf-space
+          git add keepalive.csv
+          git diff --cached --quiet && echo "No changes" && exit 0
+          git commit -m "keepalive: $(date -u +%Y-%m-%d)"
+          git push
