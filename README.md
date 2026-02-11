@@ -14,7 +14,7 @@ short_description: Explore U.S. occupational employment and wage data
 
 **Your AI-Powered Assistant for Exploring Occupational Employment and Wage Statistics**
 
-[![Live App](https://img.shields.io/badge/Live_App-Hugging_Face-yellow)](https://huggingface.co/spaces/fmegahed/oews_explorer)
+[![Live App](https://img.shields.io/badge/Live_App-Hugging_Face-yellow)](https://huggingface.co/spaces/fmegahed/querychat_demo)
 
 Explore the U.S. Bureau of Labor Statistics' Occupational Employment and Wage Statistics (OEWS) dataset using natural language queries.
 

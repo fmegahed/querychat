@@ -8,7 +8,7 @@ library(shiny)
 # Data & QueryChat setup
 # ---------------------------------------------------------------------------
 
-oews <- readRDS("data/oews.rds")
+oews <- as.data.frame(readRDS("data/oews.rds"))
 
 # Pre-compute static stats for the Home tab
 n_occupations <- length(unique(oews$occ_title[oews$o_group == "detailed"]))
