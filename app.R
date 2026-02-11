@@ -197,7 +197,7 @@ ui <- bslib::page_navbar(
           tags$div(
             class = "ratio ratio-16x9",
             tags$iframe(
-              src = "https://www.youtube.com/embed/WHlLehxlzcs",
+              src = "https://www.youtube.com/embed/y98ssTHK4RQ",
               allowfullscreen = NA,
               allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             )
